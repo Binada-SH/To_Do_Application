@@ -4,7 +4,8 @@ class ToDoList extends StatelessWidget {
   const ToDoList({
   super.key, 
   required this.taskName, 
-  required this.taskCompleted, this.onChanged,
+  required this.taskCompleted, 
+  this.onChanged,
   });
 
   final String taskName;

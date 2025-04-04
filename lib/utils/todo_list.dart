@@ -33,7 +33,10 @@ class ToDoList extends StatelessWidget {
               children: [
                 Checkbox(
                   value: taskCompleted,
-                  onChanged: onChanged),
+                  onChanged: onChanged,
+                  checkColor: Color(0xFFA8E1E1),
+                  activeColor: Color(0xFF2B9898),
+                  ),
                 Text(
                   taskName,
                   style: TextStyle(

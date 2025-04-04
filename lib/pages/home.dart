@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final _controller = TextEditingController();
   List todoList = [
     ["Get Up", false],
     ["Take A Meeting", false],
@@ -20,6 +22,13 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         todoList [index] [1] =  !todoList [index][1];
         });    
+    }
+
+    void saveNewTask () {
+      setState(() {
+        todoList.add([_controller.text, false]);
+        _controller.clear();
+      });
     }
 
   @override 
@@ -47,6 +56,7 @@ class _HomePageState extends State<HomePage> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
+                controller: _controller,
                 decoration: InputDecoration(
                   hintText: "Add new Task",
                   filled: true,
@@ -69,7 +79,10 @@ class _HomePageState extends State<HomePage> {
             )
             ),
           FloatingActionButton(
-            onPressed: (){},
+            backgroundColor: Color(0xFFAAE9E9),
+            foregroundColor:Color(0xFF000000),
+            elevation: 1,
+            onPressed: saveNewTask,
             child: Icon(Icons.add),
             ),
         ],

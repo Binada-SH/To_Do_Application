@@ -40,7 +40,10 @@ class ToDoList extends StatelessWidget {
                 Text(
                   taskName,
                   style: TextStyle(
+                    color: Color(0xFF000000),
                     fontSize: 16,
+                    decoration: taskCompleted ? TextDecoration.lineThrough: TextDecoration.none,
+
                   ),
                 ),
               ],

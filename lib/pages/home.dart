@@ -41,10 +41,39 @@ class _HomePageState extends State<HomePage> {
       }),
       backgroundColor: Color(0xFFCDE8E5),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        child: Icon(Icons.add),
-        ),
+      floatingActionButton: Row(
+        children: [ 
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Add new Task",
+                  filled: true,
+                  fillColor: Color(0xFFAAE9E9),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFFB0B2B2),
+                      ),
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF000000),
+                      
+                    ),
+                    borderRadius: BorderRadius.circular(15)
+                  )
+                ),
+              ),
+            )
+            ),
+          FloatingActionButton(
+            onPressed: (){},
+            child: Icon(Icons.add),
+            ),
+        ],
+      ),
       
     );
     

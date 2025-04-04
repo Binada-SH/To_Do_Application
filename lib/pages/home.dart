@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:to_do_application/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -40,6 +40,8 @@ class _HomePageState extends State<HomePage> {
         );
       }),
       backgroundColor: Color(0xFFCDE8E5),
+      
     );
+    
   }
 }

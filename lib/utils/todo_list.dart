@@ -38,7 +38,6 @@ class ToDoList extends StatelessWidget {
                   taskName,
                   style: TextStyle(
                     fontSize: 16,
-                    fontFamily: "Jura",
                   ),
                 ),
               ],

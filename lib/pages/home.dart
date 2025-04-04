@@ -40,6 +40,11 @@ class _HomePageState extends State<HomePage> {
         );
       }),
       backgroundColor: Color(0xFFCDE8E5),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add),
+        ),
       
     );
     

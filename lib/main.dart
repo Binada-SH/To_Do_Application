@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/pages/home.dart';
+import 'package:to_do_application/pages/notification_services.dart';
 
 Future<void>main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.delayed(Duration(milliseconds: 400));
+  await NotificationServices.init();
   runApp(const MyApp());
 }
 

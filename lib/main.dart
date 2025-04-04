@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/pages/home.dart';
 
-void main() {
+Future<void>main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(Duration(milliseconds: 400));
   runApp(const MyApp());
 }
 

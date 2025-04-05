@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/pages/home.dart';
 import 'package:to_do_application/pages/notification_services.dart';
+import 'package:to_do_application/theme.dart';
 
 Future<void>main()async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,11 +10,12 @@ Future<void>main()async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
+  State<MyApp> createState ()=> _MyAppState ();
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -22,6 +24,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class MyAppState extends State<MyApp> {
+  ThemeData _currentTheme = AppThemes.lightTheme;
+
+  void _toggleTheme () {
+    setState(() {
+      _currentTheme =
+        _currentTheme == AppThemes.lightTheme ? AppThemes.darkTheme : AppThemes.lightTheme;
+    });
+  }
+}
+
+@override
+Widget build(BuildContext context) {
+  return MeterialApp (
+    title: "taskUP",
+    theme: _currentTheme,
+    home: HomeScreen(toggleTheme: _toggleTheme),
+      )
+}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 

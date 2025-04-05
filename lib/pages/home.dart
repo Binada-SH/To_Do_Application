@@ -9,11 +9,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final _controller = TextEditingController();
-  List todoList = [
+  List todoList = [];
+  bool _showExtraOptions = false;
+  DateTime ? _reminderDateTime;
+  DateTime ? _dueDate;
+  String ? _description;
 
-    ];
+
 
     void checkBoxChanged (int index) {
       setState(() {

@@ -6,7 +6,7 @@ class menuDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: 250,
+      width: 200,
       child: Container(
         color: Colors.white,
         child: ListView(
@@ -14,7 +14,7 @@ class menuDrawer extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.black87,
+                color: Color(0xFFCDE8E5),
                 ),
                 child: Text (
                   'Menu',

@@ -21,14 +21,25 @@ class menuDrawer extends StatelessWidget {
                   child: Text (
                     'Menu',
                     style: TextStyle(
-                      letterSpacing: 1,
+                      fontFamily: 'Jura',
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.3,
                       fontSize: 26,
                     ),
                   ),
                 ),
               ),
               ListTile (
-                  title: Text('Home'),
+                  title: Text(
+                  'Home',
+                  style: TextStyle(
+                    fontFamily: 'Jura',
+                    letterSpacing: 1.3,
+                    fontWeight: FontWeight.w700,
+
+                  ),
+                ),
+                  
                   onTap: (){},
                 ),
           ],

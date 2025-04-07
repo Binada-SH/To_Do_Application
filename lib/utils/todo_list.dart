@@ -31,7 +31,11 @@ class _ToDoListState extends State<ToDoList> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [],
+      children: [
+        Container(
+          padding: EdgeInsets.all(8.0),
+        )
+      ],
     )
   }
 }

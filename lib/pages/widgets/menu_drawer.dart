@@ -9,7 +9,7 @@ class menuDrawer extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     
     // Set the drawer to be 70% of the screen height or any other value you prefer
-    final drawerHeight = screenHeight * 0.3;
+    final drawerHeight = screenHeight * 0.31;
     
     return SizedBox(
       height: drawerHeight, // Adjust this value as needed
@@ -81,6 +81,18 @@ class menuDrawer extends StatelessWidget {
                       leading: Icon(Icons.person),
                       title: Text(
                         'Account',
+                        style: TextStyle(
+                          fontFamily: 'Jura',
+                          letterSpacing: 1.3,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.timeline),
+                      title: Text(
+                        'Focus',
                         style: TextStyle(
                           fontFamily: 'Jura',
                           letterSpacing: 1.3,

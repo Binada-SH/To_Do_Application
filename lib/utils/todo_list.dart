@@ -52,8 +52,27 @@ class _ToDoListState extends State<ToDoList> {
                 Expanded(
                   child: Text(
                     widget.taskName,
-                    style: TextStyle(),
-                  ) )
+                    style: TextStyle(
+                      fontFamily: 'Jura',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.3,
+                      decoration: widget.taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                      decorationThickness: 2.0,
+                    ),
+                  ), 
+                ),
+                IconButton(
+                  icon: Icon(_isExapnded ? Icons.expand_less : Icons.expand_more),
+                  onPressed: () {
+                    setState (() {
+                      _isExapnded = !_isExapnded;
+                    });
+                  },
+                ),
+                
               ],
             ),
         )

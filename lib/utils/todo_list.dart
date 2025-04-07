@@ -28,12 +28,15 @@ class ToDoList extends StatelessWidget {
           child: Slidable(
             endActionPane: ActionPane(
               motion: StretchMotion(), 
-              children: [SlidableAction(
+              children: [
+                SlidableAction (
                 onPressed: deleteFunction,
                 icon: Icons.delete,
                 borderRadius: BorderRadius.circular(18),
                 backgroundColor: const Color.fromARGB(255, 251, 161, 154),
-              )]),
+              )
+            ]
+          ),
             child: Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(

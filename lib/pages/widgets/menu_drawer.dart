@@ -16,10 +16,14 @@ class menuDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Color(0xFFCDE8E5),
                 ),
-                child: Text (
-                  'Menu',
-                  style: TextStyle(
-                    fontSize: 24,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 43, left: 40),
+                  child: Text (
+                    'Menu',
+                    style: TextStyle(
+                      letterSpacing: 1,
+                      fontSize: 26,
+                    ),
                   ),
                 ),
               ),

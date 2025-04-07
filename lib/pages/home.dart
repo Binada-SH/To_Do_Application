@@ -60,7 +60,15 @@ class _HomePageState extends State<HomePage> {
           },
           ),
           
-        title: const Text("Welcome",),
+        title: const Text(
+          "Welcome",
+          style: TextStyle(
+          fontFamily: 'Jura',
+          fontSize: 23,
+          letterSpacing: 1.5,
+          fontWeight: FontWeight.w800,
+        ),
+      ),
         backgroundColor: Color(0xFFCDE8E5),
       ),
       body: ListView.builder(
@@ -85,25 +93,34 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: TextField(
-                  controller: _controller,
-                  decoration: InputDecoration(
-                    hintText: "Add new Task",
-                    filled: true,
-                    fillColor: Color(0xFFAAE9E9),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFFB0B2B2),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 3),
+                  child: TextField(
+                    controller: _controller,
+                    decoration: InputDecoration(
+                      hintText: "Add new Task",
+                      hintStyle: TextStyle(
+                        fontFamily: 'Jura',
+                        fontWeight: FontWeight.w800,
+                        color: Colors.grey,
+                        letterSpacing: 1.3,
                         ),
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFF000000),
-                        
+                      filled: true,
+                      fillColor: Color(0xFFAAE9E9),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFB0B2B2),
+                          ),
+                        borderRadius: BorderRadius.circular(15)
                       ),
-                      borderRadius: BorderRadius.circular(15)
-                    )
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF000000),
+                          
+                        ),
+                        borderRadius: BorderRadius.circular(15)
+                      )
+                    ),
                   ),
                 ),
               )

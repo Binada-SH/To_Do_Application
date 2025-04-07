@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_application/utils/todo_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:to_do_application/pages/widgets/menu_drawer.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
+  final GlobalKey<ScaffoldState>_scaffoldKey = GlobalKey <ScaffoldState> ();
   List todoList = [];
   bool _showExtraOptions = false;
   DateTime ? _reminderDateTime;
@@ -42,11 +44,20 @@ class _HomePageState extends State<HomePage> {
   @override 
   Widget build (BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         leading: IconButton(
-          icon: FaIcon(FontAwesomeIcons.bars),
-          onPressed: () {},
-          
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 20.0, top: 3.0),
+            child: FaIcon(
+              FontAwesomeIcons.bars,
+              color: Color(0xFF000000),
+              size: 20,
+            ),
+          ),
+          onPressed: () {
+            _scaffoldKey.currentState?.openDrawer();
+          },
           ),
           
         title: const Text("Welcome",),
@@ -64,6 +75,7 @@ class _HomePageState extends State<HomePage> {
         );
       }),
       backgroundColor: Color(0xFFCDE8E5),
+      drawer: const menuDrawer(),
 
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 7),

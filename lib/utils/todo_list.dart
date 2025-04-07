@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:intl/intl.dart';
 
 class ToDoList extends StatefulWidget {
   const ToDoList({
@@ -34,6 +35,7 @@ class _ToDoListState extends State<ToDoList> {
       children: [
         Container(
           padding: EdgeInsets.all(8.0),
+          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         )
       ],
     )

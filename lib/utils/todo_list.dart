@@ -8,7 +8,7 @@ class ToDoList extends StatefulWidget {
   final bool taskCompleted;
   final Function(bool?) ? onChanged;
   final Function(BuildContext) ? deleteFunction;
-  
+
   const ToDoList({
   super.key, 
   required this.taskName, 
@@ -16,13 +16,11 @@ class ToDoList extends StatefulWidget {
   required this.onChanged, 
   required this.deleteFunction,
   });
-
-
-
-
+  
   @override
   State<ToDoList> createState () => _ToDoListState();
 }
+
 class _ToDoListState extends State<ToDoList> {
   bool _isExapnded? = false;
   DateTime? = _reminderDate;
@@ -40,9 +38,24 @@ class _ToDoListState extends State<ToDoList> {
           padding: EdgeInsets.all(8.0),
           margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           decoration: BoxDecoration(
-            color: Color(0xFFAAE9E9)
+            color: Color(0xFFAAE9E9),
+            borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              children: [
+                Checkbox(
+                  value: widget.taskCompleted,
+                  onChanged: widget.onChanged,
+                  activeColor: Color(0xFFAAE9E9),
+                ),
 
-          ),
+                Expanded(
+                  child: Text(
+                    widget.taskName,
+                    style: TextStyle(),
+                  ) )
+              ],
+            ),
         )
       ],
     )

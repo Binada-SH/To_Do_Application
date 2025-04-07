@@ -7,6 +7,12 @@ class menuDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 200,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(13),
+          bottomRight: Radius.circular(13)
+        )
+      ),
       child: Container(
         color: Colors.white,
         child: ListView(
@@ -35,7 +41,7 @@ class menuDrawer extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Jura',
                     letterSpacing: 1.3,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w800,
 
                   ),
                 ),

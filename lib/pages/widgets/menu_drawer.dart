@@ -5,6 +5,51 @@ class menuDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final draweHeight = screenHeight *0.5;
+
+    return SizedBox(
+      height: draweHeight,
+      child: Drawer(
+        width: 200,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(23),
+            bottomRight: Radius.circular(23) 
+            ),
+        ),
+
+        child: Container(
+          color: Color(0xFFCDE8E5),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color(0xFFCDE8E5),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 40),
+                  child: Text(
+                    'Menu',
+                    style: TextStyle(
+                      fontFamily: 'Jura',
+                      fontSize: 23,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.3,
+                    ),
+                  ),
+                ),
+              ),
+              const ListTile(
+                leading: Icon(Icons.home),
+              )
+            ],
+          ),
+        ),
+
+      ),
+    );
     return Drawer(
       width: 200,
       shape: RoundedRectangleBorder(

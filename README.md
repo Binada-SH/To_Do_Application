@@ -1,4 +1,4 @@
-![iPhone Mockup](assets/Logo.png)
+![logo](assets/Logo.png)
 
 ## A Flutter Based Application Created For iOS Platform ##
 

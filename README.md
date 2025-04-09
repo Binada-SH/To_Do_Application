@@ -1,4 +1,4 @@
-# To Do Application #
+# taskUP #
 
 ![iPhone Mockup](assets/Free_iPhone_16_Mockup_4.jpg)
 

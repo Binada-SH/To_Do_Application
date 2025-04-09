@@ -22,9 +22,10 @@ class ToDoList extends StatefulWidget {
 }
 
 class _ToDoListState extends State<ToDoList> {
-  bool _isExapnded? = false;
-  DateTime? = _reminderDate;
-  DateTime? = _dueDate;
+  bool _isExpanded = false;
+  DateTime? _reminderDate;
+  DateTime? _dueDate;
+
   String _priority = "Normal";
   String? _description;
 
@@ -46,7 +47,7 @@ class _ToDoListState extends State<ToDoList> {
                 Checkbox(
                   value: widget.taskCompleted,
                   onChanged: widget.onChanged,
-                  activeColor: Color(0xFFAAE9E9),
+                  activeColor: Color(0xFF75B0B0),
                 ),
 
                 Expanded(
@@ -65,18 +66,60 @@ class _ToDoListState extends State<ToDoList> {
                   ), 
                 ),
                 IconButton(
-                  icon: Icon(_isExapnded ? Icons.expand_less : Icons.expand_more),
-                  onPressed: () {
-                    setState (() {
-                      _isExapnded = !_isExapnded;
+                  icon: Icon(_isExpanded ? Icons.expand_less : Icons.expand_more),
+                  onPressed: (){
+                    setState(() {
+                      _isExpanded = ! _isExpanded;
                     });
                   },
                 ),
+
+                IconButton( 
+                  icon: const Icon(Icons.delete),
+                  onPressed: () => widget.deleteFunction!(true),
+                  ),
+              ],
+            ),
+          ),
+          if (_isExpanded) 
+            Container(
+              padding: const EdgeInsets.all(12),
+              margin: const EdgeInsets.only(bottom: 8, left: 24, right: 16),
+              decoration: BoxDecoration(
+                color: Color(0xFFD0F0F0),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Color(0xFFAAE9E9), width: 1),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextField(
+                    decoration: const InputDecoration(
+                      hintText: "Add Description",
+                      hintStyle: TextStyle(
+                        fontFamily: 'Jura',
+                        fontSize: 14,
+                      ),
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        _description = value; 
+                      });
+                    },
+                    maxLines: 2,
+                    minLines: 1,
+                  )
+                ],
+              ),
+              )
+
+
                 
               ],
             ),
         )
       ],
-    )
+    );
   }
 }

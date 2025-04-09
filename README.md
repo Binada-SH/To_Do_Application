@@ -1,6 +1,20 @@
-# to_do_application
+# taskUP #
 
-A new Flutter project.
+![iPhone Mockup](assets/Free_iPhone_16_Mockup_4.jpg)
+
+
+This project is a productivity-focused to-do list application developed using Flutter. It is only Based for iOS phatform. The app includes several key features aimed at enhancing task management and user experience:
+
+ - **Welcome Screen: A smooth intro screen displaying the app name for 0.3-0.5 seconds.**
+
+- **Thematic Customization: Users can personalize the app with custom themes, colors, and backgrounds to suit their preferences.**
+
+- **Local Notifications: The app sends reminders for upcoming tasks, ensuring users stay on track.**
+
+ - **Location-Based Reminders: Tasks can be triggered based on the user’s location, providing more context-driven notifications.** 
+
+ - **Focus Modes/Pomodoro Integration: A Pomodoro timer to encourage productivity and ensure task completion with focused work intervals.**
+
 
 ## Getting Started
 

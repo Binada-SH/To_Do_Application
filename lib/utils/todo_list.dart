@@ -8,12 +8,26 @@ class ToDoList extends StatefulWidget {
   final Function(bool?)? onChanged;
   final Function(bool?)? deleteFunction;
   
+  // Add initial values for details
+  final String? description;
+  final String? priority;
+  final DateTime? reminderDate;
+  final DateTime? dueDate;
+  
+  // Add callback function to save details
+  final Function(String?, String?, DateTime?, DateTime?)? onDetailsChanged;
+  
   const ToDoList({
     super.key, 
     required this.taskName, 
     required this.taskCompleted, 
     required this.onChanged, 
-    required this.deleteFunction
+    required this.deleteFunction,
+    this.description,
+    this.priority,
+    this.reminderDate,
+    this.dueDate,
+    this.onDetailsChanged,
   });
 
   @override
@@ -22,13 +36,48 @@ class ToDoList extends StatefulWidget {
 
 class _ToDoListState extends State<ToDoList> {
   bool _isExpanded = false;
-  DateTime? _reminderDate;
-  DateTime? _dueDate;
-  String _priority = 'Normal'; // Default priority
-  String? _description;
+  late DateTime? _reminderDate;
+  late DateTime? _dueDate;
+  late String _priority;
+  late String? _description;
+  
+  // Text controller for description
+  late TextEditingController _descriptionController;
   
   // List of priority options
   final List<String> _priorities = ['Low', 'Normal', 'High', 'Urgent'];
+  
+  @override
+  void initState() {
+    super.initState();
+    // Initialize with values from widget or defaults
+    _description = widget.description;
+    _priority = widget.priority ?? 'Normal';
+    _reminderDate = widget.reminderDate;
+    _dueDate = widget.dueDate;
+    
+    // Initialize controller with current description
+    _descriptionController = TextEditingController(text: _description);
+  }
+  
+  @override
+  void dispose() {
+    // Clean up controller
+    _descriptionController.dispose();
+    super.dispose();
+  }
+  
+  // Save all details back to parent
+  void _saveDetails() {
+    if (widget.onDetailsChanged != null) {
+      widget.onDetailsChanged!(
+        _description,
+        _priority,
+        _reminderDate,
+        _dueDate
+      );
+    }
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -100,8 +149,9 @@ class _ToDoListState extends State<ToDoList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Description section
+                // Description section with controller
                 TextField(
+                  controller: _descriptionController,
                   decoration: const InputDecoration(
                     hintText: 'Add description...',
                     hintStyle: TextStyle(
@@ -114,6 +164,7 @@ class _ToDoListState extends State<ToDoList> {
                     setState(() {
                       _description = value;
                     });
+                    _saveDetails(); // Save when text changes
                   },
                   maxLines: 2,
                   minLines: 1,
@@ -156,6 +207,7 @@ class _ToDoListState extends State<ToDoList> {
                         setState(() {
                           _priority = newValue!;
                         });
+                        _saveDetails(); // Save when priority changes
                       },
                     ),
                   ],
@@ -190,6 +242,7 @@ class _ToDoListState extends State<ToDoList> {
                           setState(() {
                             _reminderDate = picked;
                           });
+                          _saveDetails(); // Save when reminder date changes
                         }
                       },
                     ),
@@ -217,6 +270,7 @@ class _ToDoListState extends State<ToDoList> {
                           setState(() {
                             _dueDate = picked;
                           });
+                          _saveDetails(); // Save when due date changes
                         }
                       },
                     ),

@@ -33,3 +33,8 @@
 #### - Flutter Local Notifications – to implement task reminders ####
 
 #### - Geolocator / Location – for location-based reminder functionality ####
+<br>
+
+<h6> This is a testing environment and, This application is not available on iOS AppStore </h6>
+
+###### © 2025 taskUP - Binada Hettiarachchi. All Rights Reserved. ######

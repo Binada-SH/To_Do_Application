@@ -11,6 +11,7 @@
 
 
  ### The app includes several key features aimed at enhancing task management and user experience: ###
+ #### These features will be available on upcoming updates ####
  
 - **Welcome Screen: A smooth intro screen displaying the app name for 0.3-0.5 seconds.**
 

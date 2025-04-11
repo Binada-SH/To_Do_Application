@@ -7,6 +7,7 @@
 #### taskUP is a feature-rich to-do list application built using Flutter, specifically optimized for the iOS platform. Designed to boost productivity, this app combines a simple yet an intuitive user interface with smart task management features, helping users stay focused, organized, and on schedule. ####
 
 ![iPhone Mockup](assets/Free_iPhone_16_Mockup_4.jpg)
+![iPhone Mockup](assets/taskUP_Product_Promo_MockUp.png)
 
 
  ### The app includes several key features aimed at enhancing task management and user experience: ###
